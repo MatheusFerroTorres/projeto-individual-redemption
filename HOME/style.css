@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Chinese Rocks, Montserrat;
+    background-color: rgb(0, 0, 0);
+}
+
+.titulo {
+    color: #ffffff;
+    width:fit-content;
+    font-weight: 500;
+}
+
+.navbar {
+    width: 650px;
+    color: #ffffff;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32px;
+    margin-right: -100px;
+}
+
+.navbar a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color: #f28e29;
+}
+
+.header{
+    border-bottom: 3px solid #000000;
+    height: 85px;
+}
+
+.container1{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.header .container1{
+    justify-content: space-between;
+}
+
+.header .container1 .logo0{
+    width: 160px;
+    height: 30px;
+    margin-top: 35px;
+    margin-left: -100px;
+}
+
+.banner{
+    background-image: url(../assets/Redemption-Home.png);
+    height: 670px;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .container2{
+    justify-content: center;
+    align-items: start;
+    height: 100%;
+}
+
+.banner .container2 .logo1{
+    width: 400px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: 35%;
+    justify-content: center;
+}
+
+.container3{
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+}
+
+.intro .container3 p{
+    font-size: 35px;
+    color:#ffffff;
+    text-align: center;
+}
+
+.intro{
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.conteudo{
+    justify-content: center;
+    margin-bottom: 100px;
+    background-image: url(../assets/Fundo2.jpg);
+    background-size: cover;
+    height: 1000px;
+    background-position: center;
+}
+
+.container4{
+    width: 90%;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 100px;
+}
+
+.conteudo .container4 .universo{
+    width: 200px;
+    height: 200px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.universo img{
+    width: 200px;
+    height: 200px;
+}
+
+.universo p{
+    width: 1000px;
+    font-size: 25px;
+    color: #ffffff;
+    font-family: Montserrat;
+    background-color:#242021;
+    border-radius: 0 20px 20px 0;
+    padding: 5px;
+}
+
+.Uni-Text{
+    padding-top: 20px;
+}
+
+.universo .titulo1 h2{
+    margin: 0;
+}
+
+.conteudo .container4 .valores{
+    width: 200px;
+    height: 200px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.conteudo .container4 .blackjack{
+    width: 200px;
+    height: 200px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo h2{
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow:#000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+}
+
+.section {
+    background-color: #111111;
+    color: white;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    background-color: #111111;
+    color: white;
+    padding-bottom: 10px;
+    border-top: #d91424 solid 4px;
+    font-family: Montserrat;
+    margin-top: 100px;
+    
+  }
+
+  .footer .div1footer{
+    display: flex;
+    flex-direction: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+
+  .footer .div2footer a{
+    transition: transform 0.25s ease;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+  }
+
+  .footer .div3footer{
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    width: 450px;
+    margin-top: -30px;
+  }
+
+  .footer .div4footer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+  }
+  
+  .footer h5 {
+    color: #ffffff;
+    font-size: 24px;
+    font-family: Chinese Rocks;
+    margin-bottom: 0px;
+    font-weight: 550;
+  }
+  
+  .footer h6 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 0px;
+    font-style: normal;
+  }
+  
+  .footer div {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+  }
+   
+  .footer div a:hover {
+    color: #f28e29;
+    transform: scale(1.07);
+  }
+  
+  .footer div img {
+    width: 40%;
+  }
+  
+  .copyright {
+    text-align: center;
+    font-style: italic;
+    font-family: Montserrat;
+    background-color: #111111;
+    color: white;
+    border-top: solid 3px #d91424;
+    padding-bottom: 1px;
+  }
+
+  .Copyrightdiv h6{
+    font-weight: 300;
+  }
+
+
+
+  
