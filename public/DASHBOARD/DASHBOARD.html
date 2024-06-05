@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script-dash.js"></script>
+</head>
+<body>
+    <div id="dashSidebar" class="sidebar">
+        <img src="../assets/REDEMPTION.png" alt="">
+        <a class="fecharbtn" onclick="fecharNav()">×</a>
+        <a href="../BLACKJACK/BLACKJACK.html">BLACKJACK</a>
+        <a href="./DASHBOARD.html">RANKING</a>
+        <a href="#">ESTATÍSTICAS</a>
+        <a href="#">SAIR</a>
+    </div>
+
+    <div id="conteudo">
+        <button class="abrirbtn" onclick="abrirNav()">☰</button>
+        <h2>DASHBOARD</h2>
+        <p>Aqui estão presentes os gráficos com o ranking de melhores colocados no BLACKJACK.</p>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function abrirNav() {
+        dashSidebar.style.width = "250px";
+        conteudo.style.marginLeft = "250px";
+    }
+
+    function fecharNav() {
+        dashSidebar.style.width = "0";
+        conteudo.style.marginLeft = "0";
+    }
+
+</script>

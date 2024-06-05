@@ -1,0 +1,169 @@
+body {
+    font-family: Montserrat;
+    background-color: #056839;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #242021;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    font-family: Chinese Rocks;
+}
+
+.sidebar a:hover {
+    color: #f28e29;
+}
+
+.sidebar .fecharbtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar img{
+    height: 50px;
+    width: 250px;
+}
+
+#side {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+.abrirbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #242021;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.abrirbtn:hover {
+    background-color: #f28e29;
+}
+
+.conteudo{
+    font-family:Montserrat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo button{
+    height: 40px;
+    width: 140px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    border-radius: 20px;
+}
+
+.conteudo .bt1{
+    background-color: #d61324;
+}
+
+.conteudo .bt2{
+    background-color: #0cd376;
+}
+
+.conteudo .bt3{
+    background-color: #153627;
+}
+
+.conteudo .bt4{
+    background-color: #d61324;
+}
+
+.conteudo h1{
+    font-size: 50px;
+    display: flex;
+    font-family: Chinese Rocks;
+    color: white;
+    text-shadow:#000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+}
+
+.fim button {
+    height: 50px;
+    width: 200px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 15px;
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: #d61324;
+}
+
+.fim h1{
+    font-size: 90px;
+}
+
+.fim h3{
+    font-size: 40px;
+}
+
+.fim a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.fim{
+    display: none;
+}
+
+.div_painel{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 300px;
+    width: 1000px;
+}
+
+.div_jogador{
+    display: flex;
+    flex-direction: column;
+}
+
+.div_crupie{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulos{
+    display: flex;
+    flex-direction: row;
+}
+
+.deck1{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.deck2{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

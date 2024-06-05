@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REDEMPTION</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image" href="../assets/favicon.png" />
+  <script src="script-cadastro.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container1">
+      <img class="logo0" src="../assets/REDEMPTION.png" />
+      <ul class="navbar">
+        <a href="../HOME/HOME.html">
+          <li>HOME</li>
+        </a>
+        <li>|</li>
+        <a href="../EXPLORAR.html">
+          <li>EXPLORAR</li>
+        </a>
+        <li>|</li>
+        <a href="../BLACKJACK.html">
+          <li>BLACKJACK</li>
+        </a>
+        <li>|</li>
+        <a href="../CADASTRO/CADASTRO.html">
+          <li>CADASTRO</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="container">
+      <div class="cadastro">
+        <h1>Cadastre-se</h1>
+        <div class="container2">
+
+          <div class="grupo1">
+             <p><img src="../assets/moldura/pessoa.png" alt="ícone">
+              Digite seu nome completo:</p>
+            <input id="ipt_nome" class="input" type="text">
+            <span id="erro_nome">Insira um nome maior que 2 caracteres.</span>
+            <p><img src="../assets/moldura/Email.png" alt="ícone">
+              Digite seu email:</p>
+            <input id="ipt_email" class="input" type="email">
+            <span id="erro_email">Insira um email válido.</span>
+            <p><img src="../assets/moldura/senha.png" alt="ícone">
+              Digite sua senha:</p>
+            <input id="ipt_senha" class="input" type="password">
+            <span id="erro_senha1">Insira uma senha que tenha pelo menos 5 caracteres e 1 caracter especial.</span>
+          </div>
+
+          <div class="grupo2">
+            <p><img src="../assets/moldura/senha.png" alt="ícone">
+              Digite sua senha novamente:</p>
+            <input id="ipt_confirmar" class="input" type="password">
+            <span id="erro_senha2">Insira a mesma senha nos dois campos.</span>
+            <p><img class="imagem" src="../assets/moldura/idade.png" alt="ícone">
+              Digite sua idade:</p>
+            <input id="ipt_idade" class="input" type="number">
+            <span id="erro_idade">Você precisa ser maior de 18 anos para se cadastrar.</span>
+            <p><img src="../assets/moldura/Phone.png" alt="ícone">
+              Digite seu telefone:</p>
+            <input id="ipt_telefone" class="input" type="tel">
+            <span id="erro_telefone">Insira um número de telefone válido.</span>
+          </div>
+
+        </div>
+        <div class="botao">
+          <button class="button" onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <div class="texto"><span>Já tem uma conta?</span></div>
+        <div class="mensagem"><a href="/LOGIN/LOGIN.html">Faça login aqui!</a>
+        </div>
+      </div>
+    </div>
+  </div>

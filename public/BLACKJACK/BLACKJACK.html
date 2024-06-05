@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKJACK</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="jogo-script.js"></script>
+    <script src="script-insert.js"></script>
+</head>
+
+<body>
+    <div id="dashSidebar" class="sidebar">
+        <img src="../assets/REDEMPTION.png" alt="">
+        <a class="fecharbtn" onclick="fecharNav()">×</a>
+        <a href="../BLACKJACK/BLACKJACK.html">BLACKJACK</a>
+        <a href="../DASHBOARD/DASHBOARD.html">RANKING</a>
+        <a href="#">ESTATÍSTICAS</a>
+        <a href="#">SAIR</a>
+    </div>
+
+    <div id="side">
+        <button class="abrirbtn" onclick="abrirNav()">☰</button>
+    </div>
+
+    <div id="conteudo" class="conteudo">
+        <div class="botoes"> <button id="bt1" class="bt1" onclick="iniciarJogo()" style="display: block;">Iniciar
+                Jogo</button>
+            <button id="bt2" class="bt2" onclick="comprarCarta()" style="display: none;">Comprar</button>
+            <button id="bt3" class="bt3" onclick="parar()" style="display: none;">Parar</button>
+            <button id="bt4" class="bt4" onclick="reiniciarJogo()" style="display: none;">Jogar Novamente</button>
+        </div>
+        <h1 id="mesa">Mesa</h1>
+
+        <div id="titulos" class="titulos">
+            <div id="deck1" class="deck1">
+                <h2>MÃO JOGADOR:</h2>
+            </div>
+            <div id="deck2" class="deck2">
+                <h2>MÃO CRUPIÊ:</h2>
+            </div>
+        </div>
+
+        <div id="div_painel" class="div_painel">
+            <div id="div_jogador" class="div_jogador"></div>
+            <div id="div_crupie" class="div_crupie"></div>
+        </div>
+        <div class="fim" id="fim">
+            <h1>FIM DE JOGO!</h1>
+            <h3>Veja suas ESTATÍSTICAS na DASHBOARD!</h3>
+            <button onclick=""><a href="/DASHBOARD/DASHBOARD.html">DASHBOARD</a></button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function abrirNav() {
+        dashSidebar.style.width = "250px";
+        conteudo.style.marginLeft = "0";
+    }
+
+    function fecharNav() {
+        dashSidebar.style.width = "0";
+        conteudo.style.marginLeft = "0";
+    }
+
+</script>
