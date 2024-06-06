@@ -1,6 +1,8 @@
 var listaCrupiê = [];
 var listaJogador = [];
 var manilhas = ["♥", "♦", "♠", "♣"];
+
+//JSON que armazena partidas
 var partida = {
     qtdVencida:0,
     qtdPerdida:0,
@@ -129,7 +131,7 @@ function parar() {
 }
 
 function fimDeJogo() {
-    partida.qtdTotal = partida.qtdVencida + partida.qtdPerdida + partida.qtdEmpate 
+    partida.qtdTotal = partida.qtdVencida + partida.qtdPerdida + partida.qtdEmpate +1 
 
     if (partida.qtdTotal > 10) {
         titulos.style.display = 'none'
