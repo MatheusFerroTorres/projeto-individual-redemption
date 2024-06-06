@@ -23,14 +23,14 @@ idPartida int primary key auto_increment,
 qtdPartidasGanhas int,
 qtdPartidasPerdidas int,
 qtdPartidasEmpatadas int,
-qtdPartidasTotal int
+qtdPartidasTotal int,
+fkUsuario int,
+foreign key (fkUsuario) references usuario(idUsuario)
 );
 
-create table ranking (
-idRankeado int auto_increment,
+create table personagem (
+idIcone int auto_increment,
 fkUsuario int,
-fkPartida int,
-    primary key (idRankeado, fkUsuario, fkPartida),
-   foreign key (fkUsuario) references usuario(idUsuario),
-foreign key (fkPartida) references blackjack(idPartida)
+primary key (idIcone, fkUsuario),
+foreign key (fkUsuario) references usuario(idUsuario)
 );
