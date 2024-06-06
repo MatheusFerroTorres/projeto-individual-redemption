@@ -97,7 +97,7 @@ function parar() {
         totalJogador += Number(listaJogador[cont]);
     }
 
-    while (TotalCrupiê < 17) {
+    for (var cont = 0; TotalCrupiê < 17; cont++) {
         var AleatorioCrupiê = Math.random();
         var NovoAleatorioCrupiê = AleatorioCrupiê * 8 + 2;
         var ResultadoCrupiê = NovoAleatorioCrupiê.toFixed(0);

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGRAS</title>
+    <link rel="stylesheet" href="style-regras.css">
+    <link rel="shortcut icon" href="/public/assets/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="dashSidebar" class="sidebar">
+        <img src="../assets/REDEMPTION.png" alt="">
+        <a class="fecharbtn" onclick="fecharNav()">x</a>
+        <a href="/public/BLACKJACK/BLACKJACK.html">BLACKJACK</a>
+        <a href="/public/DASHBOARD/DASHBOARD.html">RANKING</a>
+        <a href="/public/REGRAS/REGRAS.html">REGRAS</a>
+        <a href="#">SAIR</a>
+    </div>
+
+    <div id="botao">
+        <button class="abrirbtn" onclick="abrirNav()">☰</button>
+    </div>
+
+    <div id="conteudo" class="conteudo">
+        <h1>Regras Básicas do Blackjack</h1>
+        <h2>Imagine-se em um saloon esfumaçado do Velho Oeste. O ambiente está cheio de cowboys, fora-da-lei e aventureiros, todos prontos para testar sua sorte nas mesas de jogo. No canto do salão, você vê uma mesa de Blackjack, onde as fichas são empilhadas e as cartas deslizam com precisão sob o olhar atento do crupiê. Aqui, as regras básicas do Blackjack se aplicam com uma pitada de charme do Velho Oeste.</h2>
+    </div>
+
+
+</body>
+</html>
+<script>
+    function abrirNav() {
+        dashSidebar.style.width = "250px";
+        conteudo.style.marginLeft = "0";
+    }
+
+    function fecharNav() {
+        dashSidebar.style.width = "0";
+        conteudo.style.marginLeft = "0";
+    }
+
+</script>
