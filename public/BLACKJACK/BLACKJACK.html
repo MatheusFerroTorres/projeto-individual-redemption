@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="style-blackjack.css">
     <script src="jogo-script.js"></script>
     <script src="script-insert.js"></script>
-    <link rel="shortcut icon" href="/public/assets/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <div id="dashSidebar" class="sidebar">
         <img src="../assets/REDEMPTION.png" alt="">
         <a class="fecharbtn" onclick="fecharNav()">x</a>
-        <a href="/public/BLACKJACK/BLACKJACK.html">BLACKJACK</a>
-        <a href="/public/DASHBOARD/DASHBOARD.html">RANKING</a>
-        <a href="/public/REGRAS/REGRAS.html">REGRAS</a>
-        <a href="#">SAIR</a>
+        <a href="../BLACKJACK/BLACKJACK.html">BLACKJACK</a>
+        <a href="../DASHBOARD/DASHBOARD.html">RANKING</a>
+        <a href="../REGRAS/REGRAS.html">REGRAS</a>
+        <a href="../HOME/HOME.html" onclick="sair()">SAIR</a>
     </div>
 
     <div id="side">
@@ -66,6 +66,11 @@
     function fecharNav() {
         dashSidebar.style.width = "0";
         conteudo.style.marginLeft = "0";
+    }
+
+    function sair(){
+        sessionStorage.clear();
+        window.open('/public/LOGIN/LOGIN.html', '_self')
     }
 
 </script>

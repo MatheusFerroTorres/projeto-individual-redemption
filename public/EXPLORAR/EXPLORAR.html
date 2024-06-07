@@ -10,7 +10,7 @@
     <link rel="shortcut icon" type="image" href="../assets/favicon.png" />
 </head>
 
-<body>
+<body onclick="fecharModal()">
     <div class="header">
         <div class="container1">
             <img class="logo0" src="../assets/REDEMPTION.png" />
@@ -23,7 +23,7 @@
                     <li>EXPLORAR</li>
                 </a>
                 <li>|</li>
-                <a href="../BLACKJACK.html">
+                <a href="../LOGIN/LOGIN.html">
                     <li>BLACKJACK</li>
                 </a>
                 <li>|</li>
@@ -62,15 +62,10 @@
             <img height="100px" width="100px" src="/assets/buraco2.png" alt="Buraco Tiro">
         </div>
 
-        <div class="modal">
+        <div id="modalArthur" class="modal">
             <div class="conteudo-modal">
                 <div class="parte1">
                     <h1>Procurado</h1>
-                    <div class="fechar">
-                        <button onclick="fechar()">
-                            X
-                        </button>
-                    </div>
                 </div>
                 <div class="parte2">
                     <img src="../assets/personagens/arthur.png" alt="">
@@ -93,8 +88,285 @@
             </div>
         </div>
 
+        <div id="modalAbigail" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurada</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/abigail.png" alt="">
+                    <p>Abigail Roberts é uma mulher forte e determinada, conhecida por sua lealdade e resiliência. Ela teve uma juventude difícil e encontrou sua sobrevivência trabalhando em circunstâncias duras antes de se apaixonar por John Marston. Juntos, eles tiveram um filho, Jack, e Abigail sempre colocou a segurança e o bem-estar de sua família em primeiro lugar. Prática e assertiva, ela frequentemente desafiava John a abandonar a vida de crime para proporcionar um futuro melhor para sua família. Abigail é profundamente protetora de Jack e está disposta a tomar medidas drásticas para garantir sua segurança. Ao longo de sua vida, ela evoluiu de uma sobrevivente resiliente a um símbolo de esperança e estabilidade para aqueles ao seu redor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalBill" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/bill.png" alt="">
+                    <p>Bill Williamson é um homem robusto e intimidador, conhecido por sua brutalidade e impulsividade. Com uma história de serviço militar, Bill é um ex-soldado que se voltou para o crime após sua desilusão com o governo e a vida militar. Ele se juntou à gangue Van der Linde, onde rapidamente se destacou por sua força e disposição para fazer o trabalho sujo. Bill é também um homem que lida com sua identidade homossexual em um período de extrema intolerância, o que contribui para suas inseguranças e explosões de violência. Essa luta interna o torna uma figura ainda mais complexa, tentando mascarar suas vulnerabilidades com agressão e bravatas. Sua lealdade ao grupo é inegável, mas suas ações são frequentemente impulsionadas por um desejo de validação e pertencimento.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalCharles" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/charles.png" alt="">
+                    <p>Charles Smith é um homem de ascendência afro-americana e nativa americana, conhecido por sua habilidade em combate e rastreamento. Com uma personalidade calma e ponderada, Charles é um indivíduo introspectivo que valoriza a honra e a justiça. Ele teve uma infância difícil, enfrentando discriminação e preconceito, o que moldou seu caráter resiliente e compassivo. Extremamente leal, Charles se destaca por sua capacidade de proteger e cuidar dos membros de sua comunidade, muitas vezes atuando como mediador em conflitos. Além de suas habilidades como guerreiro, ele é um caçador experiente e profundamente conectado com a natureza. A força e a sabedoria de Charles fazem dele um aliado valioso e um exemplo de integridade em um mundo frequentemente marcado pela violência e pela injustiça.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalDutch" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/dutch.png" alt="">
+                    <p>Dutch van der Linde, de ascendência neerlandesa, é o carismático e idealista líder da gangue Van der Linde, conhecido por seu charme e habilidades de persuasão. Ele acredita fervorosamente na liberdade individual e na luta contra a opressão do governo e das corporações, o que o torna uma figura inspiradora para muitos dos seus seguidores. Dutch é um homem educado, eloquente e estrategicamente inteligente, sempre cheio de grandes visões e planos para o futuro. No entanto, conforme o tempo passa, suas ações se tornam mais erráticas e sua moralidade começa a se corroer, levando-o a tomar decisões cada vez mais questionáveis. Sua personalidade complexa é marcada por um constante conflito entre seus ideais utópicos e a dura realidade do mundo ao seu redor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalHosea" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/hosea.png" alt="">
+                    <p>Hosea Matthews é um dos membros mais antigos e respeitados da gangue Van der Linde, atuando como mentor e braço direito de Dutch van der Linde. Com uma vasta experiência em golpes e esquemas, Hosea é um estrategista brilhante e um mestre da manipulação, usando sua inteligência e charme para realizar diversas fraudes e assaltos. Ele é conhecido por sua sabedoria, paciência e um senso de humor afiado, o que o torna uma figura paterna para muitos na gangue, incluindo Arthur Morgan. Hosea é um homem de moralidade complexa, que, apesar de suas atividades criminosas, valoriza a lealdade e a família. Ele sonha em um dia se afastar da vida de crime e viver em paz, preferencialmente em uma pequena fazenda, mas permanece na gangue por seu profundo compromisso com Dutch.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalJack" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Civil</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/jack.png" alt="">
+                    <p>Jack Marston é o filho de John Marston e Abigail Roberts, crescendo em meio à gangue Van der Linde. Desde cedo, Jack é protegido por sua família e pelos membros da gangue, vivendo uma infância marcada tanto pelo amor quanto pela violência e insegurança do estilo de vida fora-da-lei. Ele é uma criança curiosa e sonhadora, com uma paixão particular por livros e histórias de aventuras, refletindo um desejo de escapar do ambiente caótico ao seu redor. Jack é frequentemente visto brincando e sendo cuidado pelos membros da gangue, que o tratam com carinho e tentam mantê-lo distante dos aspectos mais sombrios de suas atividades.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalJavier" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/javier.png" alt="">
+                    <p>Javier Escuella é um membro carismático e fervoroso da gangue Van der Linde, conhecido por sua lealdade e habilidade em combate. De ascendência mexicana, Javier tem um passado revolucionário, lutando contra a opressão em seu país natal antes de se juntar à gangue. Ele é um homem de convicções fortes, com um profundo senso de justiça e um idealismo que o aproxima dos objetivos de Dutch van der Linde. Javier é habilidoso com armas e um lutador capaz, além de ser um músico talentoso, frequentemente tocando violão para entreter seus companheiros.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalJohn" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/john.png" alt="">
+                    <p>John Marston é um ex-fora-da-lei cuja vida é marcada por uma busca constante por redenção e um desejo de deixar para trás seu passado criminoso. Ele é habilidoso em combate e possui um forte código de honra, embora muitas vezes se veja confrontado com as consequências de suas ações anteriores. Como pai, ele é dedicado a seu filho, Jack, e busca criar um ambiente estável e seguro para ele. A jornada de John é uma luta contínua para reconciliar sua natureza violenta com seus desejos de uma vida melhor para si mesmo e para sua família. Sua história é uma jornada de autodescoberta e redenção, repleta de desafios emocionais e dilemas morais.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalKaren" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurada</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/karen.png" alt="">
+                    <p>Karen Jones é uma personagem intrigante, membro da gangue Van der Linde. Ela é conhecida por seu espírito livre e sua natureza provocadora. Karen é uma mulher astuta e carismática, capaz de se adaptar a diferentes situações com facilidade. Ela é uma jogadora habilidosa e muitas vezes é vista como a vida da festa entre os membros da gangue. No entanto, por trás de sua fachada extrovertida, Karen esconde suas próprias incertezas e traumas do passado. Ela busca conforto em álcool e relacionamentos fugazes, talvez como uma forma de escapar da dureza da vida fora-da-lei. A história de Karen é uma jornada de autodescoberta e aceitação, enquanto ela enfrenta seus próprios demônios internos em meio à turbulência do Velho Oeste.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalLenny" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/lenny.png" alt="">
+                    <p>Lenny Summers é um membro jovem e otimista da gangue Van der Linde. Ele é conhecido por sua gentileza e humor, muitas vezes agindo como um alívio cômico em momentos de tensão. Lenny é um excelente atirador e se mostra muito leal aos seus companheiros de gangue, especialmente a Arthur Morgan. Como um dos membros mais jovens, ele traz uma energia juvenil para o grupo, mas também enfrenta os desafios de se tornar um homem em um mundo marcado pela violência e injustiça. Sua história é uma mistura de camaradagem, coragem e a luta para encontrar seu lugar em um mundo cada vez mais implacável.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalMary" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurada</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/mary.png" alt="">
+                    <p>Mary-Beth Gaskill é uma jovem inspiradora, cuja gentileza e sabedoria oferecem conforto e apoio aos seus amigos e colegas. Apaixonada por literatura e escrita, ela encontra refúgio nos livros, buscando escapar da dureza da vida no Velho Oeste. Sua natureza compassiva e sua disposição em ajudar os outros destacam sua bondade inata e sua capacidade de oferecer um ombro amigo em tempos de dificuldade. Embora não seja uma figura central, Mary-Beth é uma parte valiosa da comunidade da gangue Van der Linde, lembrando-nos da importância da empatia e do apoio mútuo mesmo em meio à adversidade.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalMicah" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/micah.png" alt="">
+                    <p>Micah Bell é um homem controverso e polarizador, cuja presença sempre parece trazer uma nuvem de conflito e desconfiança. Carismático à sua maneira, ele é notável por sua falta de escrúpulos e propensão para a violência, características que frequentemente o colocam em desacordo com seus companheiros. Sua personalidade manipuladora e egoísta muitas vezes o coloca em conflito direto com aqueles ao seu redor, especialmente com Arthur Morgan, com quem ele tem uma relação tensa e muitas vezes hostil. Micah é retratado como um indivíduo que busca apenas seu próprio interesse, sem consideração pelos danos que suas ações podem causar aos outros. Sua presença na gangue Van der Linde é uma fonte constante de preocupação e tensão.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalMolly" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurada</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/molly.png" alt="">
+                    <p>Molly O'Shea é uma figura complexa e intrigante dentro da gangue Van der Linde. Sua personalidade vibrante e sua natureza impulsiva frequentemente a destacam entre seus companheiros, mas também a colocam em situações de conflito. Molly é conhecida por sua determinação e pela sua disposição em expressar suas opiniões, mesmo que isso signifique desafiar as hierarquias estabelecidas na gangue. Sua relação tumultuada com Dutch van der Linde, o líder da gangue, é um aspecto central de sua história, refletindo seu desejo de atenção e reconhecimento. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalPearson" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/pearson.png" alt="">
+                    <p>Pearson é um homem trabalhador e confiável, cuja presença na gangue Van der Linde é marcada pela sua habilidade na cozinha e pela sua disposição em ajudar seus companheiros. Ele é retratado como um cozinheiro talentoso, capaz de transformar os ingredientes mais simples em refeições reconfortantes para a gangue. Além disso, Pearson é conhecido por sua gentileza e sua disposição em fazer o que for necessário para manter todos bem alimentados e satisfeitos. Sua personalidade calorosa e sua dedicação ao bem-estar dos outros fazem dele uma figura querida dentro da gangue, alguém em quem os outros podem sempre confiar para oferecer apoio e conforto em tempos difíceis. Pearson é um exemplo de como mesmo nas circunstâncias mais difíceis. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalReverendo" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/reverendo.png" alt="">
+                    <p>Reverendo Swanson é um homem cuja jornada é marcada por altos e baixos, refletindo a complexidade da luta contra seus próprios demônios internos. Inicialmente, ele é retratado como um líder espiritual na gangue Van der Linde, oferecendo palavras de conforto e esperança para seus companheiros em meio à violência e ao caos do Velho Oeste. No entanto, à medida que a história avança, sua própria luta contra o vício e a culpa se torna cada vez mais evidente, levando-o a momentos de desespero e autodestruição. Apesar de suas fraquezas, o Reverendo é uma figura profundamente humana, cujas batalhas internas ressoam com aqueles ao seu redor, lembrando-nos da fragilidade e da resiliência do espírito humano. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalSadie" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurada</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/sadie.png" alt="">
+                    <p>Sadie Adler é uma mulher de força e determinação inabaláveis, cuja jornada é uma inspiração de resiliência e coragem. Após enfrentar uma tragédia devastadora que tirou a vida de seu marido, Sadie emerge como uma figura de poder e independência, determinada a buscar vingança contra aqueles que lhe causaram mal. Sua habilidade em lidar com armas e sua coragem em enfrentar perigos inimagináveis fazem dela uma aliada valiosa na gangue Van der Linde, onde ela encontra uma família improvável. Apesar de sua natureza feroz, Sadie também é capaz de compaixão e empatia, especialmente com aqueles que enfrentam suas próprias provações. Sua jornada é uma narrativa de superação e redenção, onde ela encontra força e propósito em meio à escuridão. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalSean" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/sean.png" alt="">
+                    <p>Sean MacGuire é um homem de espírito livre e charmoso, cuja presença na gangue Van der Linde é marcada por sua personalidade extrovertida e seu talento para contar histórias. Ele é conhecido por sua habilidade em causar uma boa impressão e sua capacidade de animar o grupo nos momentos mais sombrios. Sean é um companheiro leal e confiável, sempre pronto para ajudar seus amigos e fazer o que for necessário para o bem da gangue. Sua natureza otimista e despreocupada muitas vezes o coloca em situações de perigo, mas ele enfrenta os desafios com bravura e determinação.  </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalStrauss" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/straus.png" alt="">
+                    <p>Leopold Strauss é um homem de negócios astuto e pragmático, cuja presença na gangue Van der Linde é essencialmente utilitária. Ele é retratado como o responsável por gerenciar as finanças da gangue, frequentemente recorrendo a empréstimos e extorsão para garantir fundos para o grupo. Apesar de sua natureza aparentemente impessoal, Strauss é capaz de oferecer conselhos sábios e orientação financeira a seus colegas, demonstrando uma compreensão aguçada das realidades econômicas do Velho Oeste. Sua presença na gangue é uma lembrança constante da necessidade de pragmatismo e planejamento em um mundo onde cada centavo conta, mesmo entre foras-da-lei. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalSusan" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurada</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/susan.png" alt="">
+                    <p>Susan Grimshaw é uma figura matronal e forte dentro da gangue Van der Linde, cuja presença é marcada por sua determinação e pragmatismo. Ela é retratada como uma voz autoritária e assertiva, muitas vezes agindo como uma espécie de mãe para os membros mais jovens da gangue. Susan é conhecida por sua lealdade feroz a Dutch van der Linde e pela sua disposição em fazer o que for necessário para proteger e garantir o bem-estar da gangue. Apesar de sua natureza dura, Susan também é capaz de mostrar compaixão e empatia quando necessário, destacando sua complexidade como personagem. Sua presença na gangue é uma fonte de estabilidade e segurança, oferecendo orientação e liderança em meio à turbulência do mundo dos fora-da-lei. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalTilly" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurada</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/tilly.png" alt="">
+                    <p>Tilly Jackson é uma mulher de espírito forte e coração generoso, cuja presença na gangue Van der Linde é marcada por sua determinação em sobreviver e prosperar em um mundo dominado pela violência e pelo caos. Ela é retratada como uma figura otimista e esperançosa, capaz de encontrar bondade e camaradagem mesmo nas circunstâncias mais difíceis. Tilly é conhecida por sua lealdade aos seus amigos na gangue e por sua disposição em fazer o que for necessário para protegê-los. Sua história é uma narrativa de superação e resiliência, onde ela encontra força e coragem em meio às adversidades da vida no Velho Oeste. Sua presença na gangue é uma fonte de inspiração e apoio para aqueles ao seu redor, demonstrando que mesmo em tempos sombrios, é possível encontrar luz e esperança através do poder da amizade e da solidariedade. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalTrelawny" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/trelawny.png" alt="">
+                    <p>Trelawny é um homem misterioso e intrigante, cuja presença na gangue Van der Linde é envolta em mistério e ambiguidade. Ele é retratado como um indivíduo hábil em lidar com contatos e situações delicadas, muitas vezes atuando como um intermediário entre a gangue e outros grupos ou indivíduos. Trelawny é conhecido por sua inteligência afiada e seu talento para o disfarce, características que o tornam um recurso valioso para a gangue em diversas situações. Apesar de sua natureza reservada e muitas vezes enigmática, ele demonstra uma lealdade surpreendente aos membros da gangue, agindo em seu benefício quando necessário. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalTio" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Procurado</h1>
+                </div>
+                <div class="parte2">
+                    <img src="../assets/personagens/uncle.png" alt="">
+                    <p>O Tio é uma figura peculiar e carismática na gangue Van der Linde, cuja presença é marcada por sua natureza excêntrica e muitas vezes cômica. Ele é retratado como um homem mais velho, frequentemente visto relaxando e contando histórias engraçadas para os outros membros da gangue. Apesar de sua tendência a ser um pouco preguiçoso e desajeitado, o Tio é amado pelos outros membros da gangue por sua natureza divertida e sua capacidade de aliviar a tensão em momentos de estresse. Sua história é uma mistura de momentos de hilaridade e ocasionais lapsos de lucidez, adicionando uma dose de humor e humanidade à dinâmica da gangue. </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalDestino" class="modal">
+            <div class="conteudo-modal">
+                <div class="parte1">
+                    <h1>Destino da Gangue</h1>
+                </div>
+                <div class="parte2">
+                    <p>Ao longo da história, vemos alguns membros da gangue encontrar um fim trágico, muitas vezes em confrontos diretos com autoridades ou rivais. Outros se afastam da gangue em busca de uma vida diferente, tentando deixar para trás o passado de crimes e violência. Alguns encontram a redenção em atos de heroísmo ou sacrifício, enquanto outros sucumbem aos seus demônios internos, perdendo-se em um ciclo de autodestruição. No entanto, apesar das diferenças em seus destinos individuais, todos os membros da gangue compartilham um vínculo único e profundo, forjado através das lutas compartilhadas e dos momentos de camaradagem ao longo de sua jornada. Essa conexão permanece como um testemunho da força dos laços humanos, mesmo em face da adversidade e da incerteza do Velho Oeste. </p>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="container">
-            <div class="card">
+            <div id="arthur" class="card" onclick="abrirModal(modalArthur); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/arthur.png" alt="">
 
                 <div class="card-content">
@@ -107,7 +379,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="abigail" class="card" onclick="abrirModal(modalAbigail); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/abigail.png" alt="">
 
                 <div class="card-content">
@@ -120,7 +392,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="bill" class="card" onclick="abrirModal(modalBill); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/bill.png" alt="">
 
                 <div class="card-content">
@@ -133,7 +405,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="charles" class="card" onclick="abrirModal(modalCharles); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/charles.png" alt="">
 
                 <div class="card-content">
@@ -146,7 +418,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="dutch" class="card" onclick="abrirModal(modalDutch); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/dutch.png" alt="">
 
                 <div class="card-content">
@@ -159,7 +431,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="hosea" class="card" onclick="abrirModal(modalHosea); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/hosea.png" alt="">
 
                 <div class="card-content">
@@ -172,7 +444,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="jack" class="card" onclick="abrirModal(modalJack); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/jack.png" alt="">
 
                 <div class="card-content">
@@ -185,7 +457,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="javier" class="card" onclick="abrirModal(modalJavier); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/javier.png" alt="">
 
                 <div class="card-content">
@@ -198,7 +470,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="john" class="card" onclick="abrirModal(modalJohn); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/john.png" alt="">
 
                 <div class="card-content">
@@ -211,7 +483,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="karen" class="card" onclick="abrirModal(modalKaren); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/karen.png" alt="">
 
                 <div class="card-content">
@@ -224,7 +496,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="lenny" class="card" onclick="abrirModal(modalLenny); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/lenny.png" alt="">
 
                 <div class="card-content">
@@ -237,7 +509,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="mary" class="card" onclick="abrirModal(modalMary); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/mary.png" alt="">
 
                 <div class="card-content">
@@ -250,8 +522,9 @@
                 <div class="backdrop"></div>
             </div>
         </div>
+
         <div class="container6">
-            <div class="card">
+            <div id="micah" class="card" onclick="abrirModal(modalMicah); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/micah.png" alt="">
 
                 <div class="card-content">
@@ -264,7 +537,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="molly" class="card" onclick="abrirModal(modalMolly); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/molly.png" alt="">
 
                 <div class="card-content">
@@ -277,7 +550,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="pearson" class="card" onclick="abrirModal(modalPearson); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/pearson.png" alt="">
 
                 <div class="card-content">
@@ -290,7 +563,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="reverendo" class="card" onclick="abrirModal(modalReverendo); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/reverendo.png" alt="">
 
                 <div class="card-content">
@@ -303,7 +576,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="sadie" class="card" onclick="abrirModal(modalSadie); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/sadie.png" alt="">
 
                 <div class="card-content">
@@ -316,7 +589,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="sean" class="card" onclick="abrirModal(modalSean); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/sean.png" alt="">
 
                 <div class="card-content">
@@ -329,7 +602,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="strauss" class="card" onclick="abrirModal(modalStrauss); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/straus.png" alt="">
 
                 <div class="card-content">
@@ -342,7 +615,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="susan" class="card" onclick="abrirModal(modalSusan); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/susan.png" alt="">
 
                 <div class="card-content">
@@ -355,7 +628,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="tilly" class="card" onclick="abrirModal(modalTilly); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/tilly.png" alt="">
 
                 <div class="card-content">
@@ -368,7 +641,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="trelawny" class="card" onclick="abrirModal(modalTrelawny); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/trelawny.png" alt="">
 
                 <div class="card-content">
@@ -381,7 +654,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="tio" class="card" onclick="abrirModal(modalTio); event.stopPropagation()">
                 <img class="background" src="../assets/personagens/uncle.png" alt="">
 
                 <div class="card-content">
@@ -394,7 +667,7 @@
                 <div class="backdrop"></div>
             </div>
 
-            <div class="card">
+            <div id="destino" class="card" onclick="abrirModal(modalDestino); event.stopPropagation()">
                 <img class="background" src="../assets/destiny.jpg" alt="">
 
                 <div class="card-content">
