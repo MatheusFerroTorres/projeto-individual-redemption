@@ -61,3 +61,16 @@ body {
 .abrirbtn:hover {
     background-color: #f28e29;
 }
+
+.container1{
+    background-color: black;
+    width: 50%;
+    opacity: 90%;
+}
+
+.ranking{
+    display: block;
+    box-sizing: border-box;
+    height: 300px;
+    width: 500px;
+}

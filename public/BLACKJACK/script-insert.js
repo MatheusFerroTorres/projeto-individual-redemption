@@ -1,5 +1,5 @@
 
-function inserir(){
+function pontuar(){
     fetch('/blackjack/', {
         method: 'POST',
         headers: {
