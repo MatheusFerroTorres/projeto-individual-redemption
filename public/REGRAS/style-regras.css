@@ -1,6 +1,26 @@
 body {
-    font-family: Montserrat;
-    background-color: #3a111b;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.6;
+    background-image: url(../assets/Wall-Regra.jpg);
+    padding: 20px;
+}
+
+header {
+    font-family: Chinese Rocks;
+    background-color: #911212;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .sidebar {
@@ -61,26 +81,31 @@ body {
     background-color: #f28e29;
 }
 
-.conteudo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    width: 1000px;
+.conteudo {
+    background-color: #a0a0a0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.conteudo h1{
-    margin: 0;
-    padding-left: 170px;
-    font-size: 70px;
-    color: #ffffff;
-    font-family: Chinese Rocks;
-    text-shadow:#000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+.regra {
+    margin-bottom: 30px;
 }
 
-.conteudo h2{
-    padding-left: 170px;
-    color: blanchedalmond;
-    justify-content: center;
-    font-size: 20px;
+.regra h2 {
+    font-size: 1.8em;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.regra p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.regra ul {
+    margin-bottom: 10px;
 }
