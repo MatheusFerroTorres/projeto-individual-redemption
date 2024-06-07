@@ -109,3 +109,7 @@ main {
 .regra ul {
     margin-bottom: 10px;
 }
+
+.regra a{
+    text-decoration: none;
+}

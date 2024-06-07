@@ -96,7 +96,8 @@ body {
 }
 
 .conteudo h1{
-    font-size: 50px;
+    margin: 0;
+    font-size: 80px;
     display: flex;
     font-family: Chinese Rocks;
     color: white;
@@ -166,4 +167,22 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+.div_jogador{
+    background-color: white;
+    height: 300px;
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+    border:solid black ;
+}
+
+.div_crupie{
+    background-color: white;
+    height: 300px;
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+    border:solid black ;
 }

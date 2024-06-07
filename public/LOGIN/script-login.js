@@ -14,7 +14,7 @@ fetch('/usuarios/autenticar', {
 }) .then(res =>{
     if (res.ok){
         res.json().then(response => sessionStorage.setItem('idUsuario',`${response[0].idUsuario}`))
-        window.open('/BLACKJACK/BLACKJACK.html', '_self')
+        window.open('/REGRAS/REGRAS.html', '_self')
     } else{
         res.json().then(response => alert(response))
         erro_nome.style.display = 'block'

@@ -26,7 +26,7 @@
     </div>
 
     <div id="conteudo" class="conteudo">
-        <h1 id="mesa">Mesa</h1>
+        <h1 id="mesa">Mesa de Blackjack</h1>
         <div class="botoes"> <button id="bt1" class="bt1" onclick="iniciarJogo()" style="display: block;">Iniciar
                 Jogo</button>
             <button id="bt2" class="bt2" onclick="comprarCarta()" style="display: none;">Comprar</button>
@@ -34,18 +34,17 @@
             <button id="bt4" class="bt4" onclick="reiniciarJogo()" style="display: none;">Jogar Novamente</button>
         </div>
 
-        <div id="titulos" class="titulos">
-            <div id="deck1" class="deck1">
-                <h2>MÃO JOGADOR:</h2>
-            </div>
-            <div id="deck2" class="deck2">
-                <h2>MÃO CRUPIÊ:</h2>
-            </div>
-        </div>
 
         <div id="div_painel" class="div_painel">
-            <div id="div_jogador" class="div_jogador"></div>
-            <div id="div_crupie" class="div_crupie"></div>
+                    <div id="div_maoJ" class="div_maoJ">
+                        <h2>MÃO JOGADOR:</h2>
+                        <div id="div_jogador" class="div_jogador"></div>
+                    </div>
+
+                    <div id="div_maoC" class="div_maoJ">
+                        <h2>MÃO CRUPIÊ:</h2>
+                        <div id="div_crupie" class="div_crupie"></div>
+                    </div>
         </div>
         <div class="fim" id="fim">
             <h1>FIM DE JOGO!</h1>
