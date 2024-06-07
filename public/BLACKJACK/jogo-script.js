@@ -1,13 +1,16 @@
 var listaCrupiê = [];
 var listaJogador = [];
-var manilhas = ["♥", "♦", "♠", "♣"];
+var manilhas = ["<span style='color: red;display: contents'>♥</span>", "<span style='color: red;display: contents'>♦</span>", "♠", "♣"];
+
+// Limita as compras do crupiê
+var limitador = 0;
 
 //JSON que armazena partidas
 var partida = {
-    qtdVencida:0,
-    qtdPerdida:0,
-    qtdEmpate:0,
-    qtdTotal:1
+    qtdVencida: 0,
+    qtdPerdida: 0,
+    qtdEmpate: 0,
+    qtdTotal: 1
 };
 
 function iniciarJogo() {
@@ -30,10 +33,14 @@ function comprarCarta() {
     var NovoAleatorioJogador = AleatorioJogador * 8 + 2;
     var ResultadoCrupiê = NovoAleatorioCrupiê.toFixed(0);
     var ResultadoJogador = NovoAleatorioJogador.toFixed(0);
-    listaCrupiê.push(ResultadoCrupiê);
+    if (limitador < 17) {
+        listaCrupiê.push(ResultadoCrupiê);
+    }
     listaJogador.push(ResultadoJogador);
     atualizarPainel();
     verificarVencedor();
+
+
 }
 
 function atualizarPainel() {
@@ -53,6 +60,7 @@ function atualizarPainel() {
     }
 
     div_total.innerHTML = `<br> Total do Crupiê: ${TotalCrupiê} <br> Total do Jogador: ${TotalJogador} <br> Partida Atual: ${partida.qtdTotal}`;
+    limitador = TotalCrupiê;
 }
 
 function verificarVencedor() {
@@ -66,7 +74,11 @@ function verificarVencedor() {
         totalJogador += Number(listaJogador[cont]);
     }
 
-    if (totalJogador > 21) {
+    if (totalJogador >= 21 && TotalCrupiê >= 21) {
+        partida.qtdEmpate++
+        alert(`Empate! Crupiê ficou com ${TotalCrupiê}. Você ficou com ${totalJogador}.`);
+        fimDeJogo();
+    } else if (totalJogador > 21) {
         partida.qtdPerdida++
         alert(`Você estourou com ${totalJogador}. Crupiê Ganhou!`);
         fimDeJogo();
@@ -115,15 +127,15 @@ function parar() {
         partida.qtdVencida++
         alert(`Você Venceu! Com ${totalJogador}.`);
         fimDeJogo();
-    } else if (totalJogador < TotalCrupiê) {
-        partida.qtdPerdida++
-        alert(`Crupiê venceu. Com ${TotalCrupiê}.`);
-        fimDeJogo();
     } else if (TotalCrupiê == 21) {
         partida.qtdPerdida++
         alert("Blackjack! Crupiê venceu!");
         fimDeJogo();
-    } else {
+    } else if (totalJogador < TotalCrupiê) {
+        partida.qtdPerdida++
+        alert(`Crupiê venceu. Com ${TotalCrupiê}.`);
+        fimDeJogo();
+    } else if (totalJogador >= 21 && TotalCrupiê >= 21) {
         partida.qtdEmpate++
         alert(`Empate! Crupiê ficou com ${TotalCrupiê}. Você ficou com ${totalJogador}.`);
         fimDeJogo();
@@ -131,7 +143,7 @@ function parar() {
 }
 
 function fimDeJogo() {
-    partida.qtdTotal = partida.qtdVencida + partida.qtdPerdida + partida.qtdEmpate +1 
+    partida.qtdTotal = partida.qtdVencida + partida.qtdPerdida + partida.qtdEmpate + 1
 
     if (partida.qtdTotal > 10) {
         mesa.style.display = 'none';
@@ -151,6 +163,7 @@ function fimDeJogo() {
 }
 
 function reiniciarJogo() {
+    limitador = 0;
     div_jogador.style.display = 'flex';
     div_crupie.style.display = 'flex';
     fim.style.display = 'none';
