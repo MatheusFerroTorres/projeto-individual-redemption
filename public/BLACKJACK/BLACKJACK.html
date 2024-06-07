@@ -50,7 +50,7 @@
         <div class="fim" id="fim">
             <h1>FIM DE JOGO!</h1>
             <h3>Veja suas ESTATÍSTICAS na DASHBOARD!</h3>
-            <button onclick=""><a href="/DASHBOARD/DASHBOARD.html">DASHBOARD</a></button>
+            <button onclick="abrirDash()">DASHBOARD</button>
         </div>
     </div>
 </body>
@@ -58,6 +58,10 @@
 </html>
 
 <script>
+    function abrirDash(){
+        window.open('/public/DASHBOARD/DASHBOARD.html', '_self')
+    }
+
     function abrirNav() {
         dashSidebar.style.width = "250px";
         conteudo.style.marginLeft = "0";
