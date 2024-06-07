@@ -138,6 +138,7 @@ body {
     flex-direction: row;
     height: 300px;
     width: 1000px;
+    align-items: center;
 }
 
 .div_jogador{
@@ -185,4 +186,24 @@ body {
     text-align: center;
     border-radius: 10px;
     border:solid black ;
+}
+
+.div_total{
+    background-color: white;
+    height: 100px;
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+    border:solid black ;
+}
+
+.div_totalT{
+    display: flex;
+    padding-top: 100px;
+}
+
+.botoes{
+   display: flex;
+   flex-direction: row;
+   gap: 5px;
 }

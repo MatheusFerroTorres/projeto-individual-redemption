@@ -52,7 +52,7 @@ function atualizarPainel() {
         TotalCrupiê += Number(listaCrupiê[cont]);
     }
 
-    div_jogador.innerHTML += `<br> Total do Crupiê: ${TotalCrupiê} <br> Total do Jogador: ${TotalJogador} <br> Partida Atual: ${partida.qtdTotal}`;
+    div_total.innerHTML = `<br> Total do Crupiê: ${TotalCrupiê} <br> Total do Jogador: ${TotalJogador} <br> Partida Atual: ${partida.qtdTotal}`;
 }
 
 function verificarVencedor() {
@@ -134,7 +134,6 @@ function fimDeJogo() {
     partida.qtdTotal = partida.qtdVencida + partida.qtdPerdida + partida.qtdEmpate +1 
 
     if (partida.qtdTotal > 10) {
-        titulos.style.display = 'none'
         mesa.style.display = 'none';
         div_painel.style.display = 'none';
         bt1.style.display = 'none';
@@ -163,4 +162,5 @@ function reiniciarJogo() {
     listaJogador = [];
     div_jogador.innerHTML = '';
     div_crupie.innerHTML = '';
+    div_total.innerHTML = '';
 }
