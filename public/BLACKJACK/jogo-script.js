@@ -139,6 +139,10 @@ function parar() {
         partida.qtdEmpate++
         alert(`Empate! Crupiê ficou com ${TotalCrupiê}. Você ficou com ${totalJogador}.`);
         fimDeJogo();
+    } else if (totalJogador == TotalCrupiê && totalJogador > 16){
+        partida.qtdEmpate++
+        alert(`Empate! Crupiê ficou com ${TotalCrupiê}. Você ficou com ${totalJogador}.`);
+        fimDeJogo();
     }
 }
 
@@ -153,7 +157,7 @@ function fimDeJogo() {
         bt3.style.display = 'none';
         bt4.style.display = 'none';
         fim.style.display = 'block';
-        inserir();
+        pontuar();
     } else {
         fim.style.display = 'none';
         bt2.style.display = 'none';

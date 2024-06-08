@@ -17,7 +17,7 @@ fetch('/usuarios/autenticar', {
         window.open('/REGRAS/REGRAS.html', '_self')
     } else{
         res.json().then(response => alert(response))
-        erro_nome.style.display = 'block'
+        erro_email.style.display = 'block'
         erro_senha.style.display = 'block'
     }
 })

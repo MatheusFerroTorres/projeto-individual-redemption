@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASHBOARD</title>
     <link rel="stylesheet" href="style-dash.css">
-    <script src="script-dash.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="shortcut icon" href="/public/assets/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -33,11 +32,18 @@
         </div>
     </div>
 
+    <div class="container2">
+        <div class="estatistica">
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div>
+
 </body>
-
 </html>
-
 <script>
+    
+    var idPegar = sessionStorage.idUsuario;
+    //Inicio do script da sidebar
     function abrirNav() {
         dashSidebar.style.width = "250px";
         conteudo.style.marginLeft = "250px";
@@ -52,61 +58,112 @@
         sessionStorage.clear();
         window.open('/public/LOGIN/LOGIN.html', '_self')
     }
-</script>
+    //Fim do script da sidebar
 
-<script>
-    //Gráfico
-    Chart.defaults.color = 'red';
-    Chart.defaults.font.size = 15;
-    Chart.defaults.font.family = 'Chinese Rocks';
-    const data = {
-        datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(201, 203, 207, 0.2)'
-            ],
-            borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(54, 162, 235)',
-                'rgb(153, 102, 255)',
-                'rgb(201, 203, 207)'
-            ],
-            borderWidth: 1
-        }]
-    };
-</script>
+    var listaNomes = [];
+    var listaVencida = [];
+    var listaPerdida = [];
+    var listaEmpatada = [];
+    var listaTotal = [];
 
-<script>
-    const ctx = document.getElementById('myChart');
+    //Gráfico Ranking
     function pegar() {
+        const ctx = document.getElementById('myChart');
         //Chart JS
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: listaNomes,
                 datasets: [{
                     label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: listaVencida,
                     borderWidth: 1
                 }]
             },
             options: {
                 scales: {
                     y: {
+                        suggestedMin: 0,
+                        suggestedMax: 10,
                         beginAtZero: true
+                    }, x: {
+                        ticks: {
+                            color: 'white',
+                            font: {
+                                size: 15
+                            }
+                        }
                     }
                 }
             }
         });
     }
+
+    fetch('/blackjack/')
+        .then(function (resposta) {
+            resposta.json().then(function (res) {
+                console.log(res)
+                for (var cont = 0; cont < res.length; cont++) {
+                    console.log(res)
+                    console.log(res[cont])
+                    listaNomes.push(res[cont].nome)
+                    listaVencida.push(res[cont].qtdPartidasGanhas)
+                    listaPerdida.push(res[cont].qtdPartidasPerdidas)
+                    listaEmpatada.push(res[cont].qtdPartidasEmpatadas)
+                    listaTotal.push(res[cont].qtdPartidasTotal)
+                }
+                pegar();
+            })
+        })
+
+    var total = [];
+
+    fetch(`/blackjack/resultado/${idPegar}`)
+        .then(function (resposta) {
+            resposta.json().then(function (res) {
+                console.log(res)
+
+                total.push(res[0].qtdPartidasGanhas)
+                total.push(res[0].qtdPartidasPerdidas)
+                total.push(res[0].qtdPartidasEmpatadas)
+
+                console.log(`Dados resultado: ${total}`);
+                pegar2(total);
+
+            })
+        })
+
+   //Gráfico Estatísticas
+    function pegar2(total) {
+
+        var grafico = document.getElementById('myChart2');
+
+        var pieChart = new Chart(grafico, {
+            type: 'pie',
+            data: {
+                labels: ['Vitórias', 'Derrotas', 'Empates'],
+                datasets: [{
+                    label: 'Quantidade',
+                    data: total,
+                    borderColor: "#FFFF",
+                    backgroundColor: [
+                        "#B0E0E6", "#FF4500", "#2E8B57", "#FF0000", "#FFFF00"
+                    ]
+                }]
+            },
+            options: {
+                // Opções específicas para o gráfico de pizza
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        enabled: true,
+                    }
+                }
+            }
+        });
+    }
+
 </script>
