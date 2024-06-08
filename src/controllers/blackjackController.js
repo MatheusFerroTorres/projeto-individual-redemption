@@ -1,41 +1,24 @@
 var blackjackModel = require('../models/blackjackModel')
 
 
-function pontuar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var qtdVencida = req.body.qtdVencidaServer;
-    var qtdPerdida = req.body.qtdPerdidaServer;
-    var qtdEmpate = req.body.qtdEmpateServer;
-    var qtdTotal = req.body.qtdTotalServer;
-    var idUsuario = req.body.idUsuarioServer;
+// ESSE END POINT REALIZA O INSERT E O UPDATE. 
+// INSERT SE NÃO HOUVER DADOS NO BANCO, E UPDATE SE ELE ENCONTRAR ALGO.
 
-    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-    blackjackModel.pontuar(qtdVencida, qtdPerdida, qtdEmpate, qtdTotal, idUsuario)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        ).catch(
-            function (erro) {
-                console.log(erro);
-                console.log(
-                    "\nHouve um erro ao realizar o cadastro! Erro: ",
-                    erro.sqlMessage
-                );
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
-function atualizar(req, res) {
+function pontuarOuAtualizar(req, res) {
 
-    const idUsuario = req.params.idUsuario; // Pegando o ID do parâmetro da URL
-    const { qtdVencidaServer, qtdPerdidaServer, qtdEmpateServer, qtdTotalServer } = req.body;
+    // ATALHO (DESESTRUTURAÇÃO DE OBJETOS) PARA ATRIBUIR OS VALORES DO OBJETO req.body PARA AS VARIAVEIS
 
-    blackjackModel.verificar(idUsuario)
+    var { qtdVencida, qtdPerdida, qtdEmpate, qtdTotal, idUsuario } = req.body;
+
+    // VERIFICA SE O USUARIO JÁ POSSUE ALGUMA PARTIDA
+
+    blackjackModel.verificarUsuario(idUsuario)
         .then(resultados => {
             if (resultados.length > 0) {
-                // Usuário encontrado, atualizar os dados
-                blackjackModel.atualizar(qtdVencidaServer, qtdPerdidaServer, qtdEmpateServer, qtdTotalServer, idUsuario)
+
+                // USUÁRIO ENCONTRADO, ENTÃO VAMOS ATUALIZAR OS DADOS
+
+                blackjackModel.atualizar(qtdVencida, qtdPerdida, qtdEmpate, qtdTotal, idUsuario)
                     .then(resultado => {
                         res.status(200).json({ message: 'Dados atualizados com sucesso!', resultado });
                     })
@@ -43,9 +26,13 @@ function atualizar(req, res) {
                         console.error("\nHouve um erro ao atualizar os dados! Erro: ", erro.sqlMessage);
                         res.status(500).json(erro.sqlMessage);
                     });
-            } else {
-                // Usuário não encontrado, inserir um novo registro
-                blackjackModel.pontuar(qtdVencidaServer, qtdPerdidaServer, qtdEmpateServer, qtdTotalServer, idUsuario)
+            }
+
+            else {
+
+                // USUARIO NÃO ENCONTRADO, VAMOS INSERIR OS DADOS
+
+                blackjackModel.pontuar(qtdVencida, qtdPerdida, qtdEmpate, qtdTotal, idUsuario)
                     .then(resultado => {
                         res.status(201).json({ message: 'Dados inseridos com sucesso!', resultado });
                     })
@@ -55,13 +42,13 @@ function atualizar(req, res) {
                     });
             }
         })
+
         .catch(erro => {
             console.error("\nHouve um erro ao verificar o usuário! Erro: ", erro.sqlMessage);
             res.status(500).json(erro.sqlMessage);
         });
+
 }
-
-
 
 function pegar(req, res) {
     blackjackModel.pegar()
@@ -73,7 +60,7 @@ function pegar(req, res) {
             function (erro) {
                 console.log(erro);
                 console.log(
-                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    "\nHouve um erro ao realizar ao verificar! Erro: ",
                     erro.sqlMessage
                 );
                 res.status(500).json(erro.sqlMessage);
@@ -82,12 +69,11 @@ function pegar(req, res) {
 
 }
 
-function verificar(req, res) {
+function resultadoJogo(req, res) {
 
     var id = req.params.idUsuario;
 
-    // Mudamos para `query` para receber como parâmetro de URL
-    blackjackModel.verificar(id)
+    blackjackModel.resultadoJogo(id)
         .then(resultado => {
             res.json(resultado);
         })
@@ -97,9 +83,9 @@ function verificar(req, res) {
         });
 }
 
+
 module.exports = {
-    pontuar,
     pegar,
-    verificar, 
-    atualizar
+    resultadoJogo,
+    pontuarOuAtualizar
 }

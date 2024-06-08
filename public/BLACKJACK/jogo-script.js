@@ -157,7 +157,7 @@ function fimDeJogo() {
         bt3.style.display = 'none';
         bt4.style.display = 'none';
         fim.style.display = 'block';
-        pontuar();
+        pontuarOuAtualizar();
     } else {
         fim.style.display = 'none';
         bt2.style.display = 'none';

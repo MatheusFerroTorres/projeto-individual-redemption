@@ -3,28 +3,24 @@ var router = express.Router();
 var blackjackController = require("../controllers/blackjackController");
 
 
-router.post("/", function (req, res) {
+// POST ou PUT combinados em uma única rota
 
-//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
-    blackjackController.pontuar(req, res);
+router.post("/pontuar-ou-atualizar", function (req, res) {
+    blackjackController.pontuarOuAtualizar(req, res);
 });
 
-router.get("/", function (req, res) {
 
-//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
+// GET ALL
+
+router.get("/", function (req, res) {
     blackjackController.pegar(req, res);
 });
 
+
+// GET ONE
+
 router.get("/resultado/:idUsuario", function (req, res) {
-
-//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
-    blackjackController.verificar(req, res);
-});
-
-router.put("/atualizar/:idUsuario", function (req, res) {
-
-//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
-    blackjackController.atualizar(req, res);
+    blackjackController.resultadoJogo(req, res);
 });
 
 module.exports = router;

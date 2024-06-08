@@ -39,11 +39,12 @@
     </div>
 
 </body>
+
 </html>
 <script>
-    
-    var idPegar = sessionStorage.idUsuario;
+
     //Inicio do script da sidebar
+
     function abrirNav() {
         dashSidebar.style.width = "250px";
         conteudo.style.marginLeft = "250px";
@@ -58,6 +59,7 @@
         sessionStorage.clear();
         window.open('/public/LOGIN/LOGIN.html', '_self')
     }
+
     //Fim do script da sidebar
 
     var listaNomes = [];
@@ -66,7 +68,14 @@
     var listaEmpatada = [];
     var listaTotal = [];
 
-    //Gráfico Ranking
+    // ESSE ESTÁ SENDO USADO NA FUNÇÃO estatistica
+
+    var idPegar = sessionStorage.idUsuario;
+
+    var total = [];
+
+    // GRAFICO RANKING
+
     function pegar() {
         const ctx = document.getElementById('myChart');
         //Chart JS
@@ -99,42 +108,9 @@
         });
     }
 
-    fetch('/blackjack/')
-        .then(function (resposta) {
-            resposta.json().then(function (res) {
-                console.log(res)
-                for (var cont = 0; cont < res.length; cont++) {
-                    console.log(res)
-                    console.log(res[cont])
-                    listaNomes.push(res[cont].nome)
-                    listaVencida.push(res[cont].qtdPartidasGanhas)
-                    listaPerdida.push(res[cont].qtdPartidasPerdidas)
-                    listaEmpatada.push(res[cont].qtdPartidasEmpatadas)
-                    listaTotal.push(res[cont].qtdPartidasTotal)
-                }
-                pegar();
-            })
-        })
+    // GRAFICO - RESULTADO DA PARTIDA
 
-    var total = [];
-
-    fetch(`/blackjack/resultado/${idPegar}`)
-        .then(function (resposta) {
-            resposta.json().then(function (res) {
-                console.log(res)
-
-                total.push(res[0].qtdPartidasGanhas)
-                total.push(res[0].qtdPartidasPerdidas)
-                total.push(res[0].qtdPartidasEmpatadas)
-
-                console.log(`Dados resultado: ${total}`);
-                pegar2(total);
-
-            })
-        })
-
-   //Gráfico Estatísticas
-    function pegar2(total) {
+    function estatistica(total) {
 
         var grafico = document.getElementById('myChart2');
 
@@ -165,5 +141,41 @@
             }
         });
     }
+
+    // FETCH - RANKING
+
+    fetch('/blackjack/')
+        .then(function (resposta) {
+            resposta.json().then(function (res) {
+                console.log(res)
+                for (var cont = 0; cont < res.length; cont++) {
+                    console.log(res)
+                    console.log(res[cont])
+                    listaNomes.push(res[cont].nome)
+                    listaVencida.push(res[cont].qtdPartidasGanhas)
+                    listaPerdida.push(res[cont].qtdPartidasPerdidas)
+                    listaEmpatada.push(res[cont].qtdPartidasEmpatadas)
+                    listaTotal.push(res[cont].qtdPartidasTotal)
+                }
+                pegar();
+            })
+        })
+
+    // FETCH - ESTATISTICAS
+
+    fetch(`/blackjack/resultado/${idPegar}`)
+        .then(function (resposta) {
+            resposta.json().then(function (res) {
+                console.log(res)
+
+                total.push(res[0].qtdPartidasGanhas)
+                total.push(res[0].qtdPartidasPerdidas)
+                total.push(res[0].qtdPartidasEmpatadas)
+
+                console.log(`resultado do jogo: ${total}`);
+                estatistica(total);
+
+            })
+        })
 
 </script>

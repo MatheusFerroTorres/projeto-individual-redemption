@@ -1,34 +1,37 @@
 var id = sessionStorage.getItem('idUsuario')
 
-function pontuar() {
-    const id = sessionStorage.getItem('idUsuario');
+// FUNÇÃO QUE REALIZA A REQUISIÃO PARA ROTA 'pontuar-ou-atualizar'
+
+function pontuarOuAtualizar() {
+    var id = sessionStorage.getItem('idUsuario');
+    
     if (!id) {
         console.error('ID do usuário não encontrado no sessionStorage.');
         return;
     }
 
-    fetch(`/blackjack/atualizar/${id}`, {
-        method: 'PUT',
+    fetch('/blackjack/pontuar-ou-atualizar', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            qtdVencidaServer: partida.qtdVencida,
-            qtdPerdidaServer: partida.qtdPerdida,
-            qtdEmpateServer: partida.qtdEmpate,
-            qtdTotalServer: partida.qtdTotal,
-            idUsuarioServer: id
+            qtdVencida: partida.qtdVencida,
+            qtdPerdida: partida.qtdPerdida,
+            qtdEmpate: partida.qtdEmpate,
+            qtdTotal: partida.qtdTotal,
+            idUsuario: id
         })
     })
-    .then(res => {
-        if (res.ok) {
-            console.log('Dados atualizados com sucesso!');
-        } else {
-            console.log('Erro ao atualizar dados.');
-            res.json().then(response => alert(response));
-        }
-    })
-    .catch(error => {
-        console.error('Erro na requisição:', error);
-    });
+        .then(res => {
+            if (res.ok) {
+                console.log('Dados enviados com sucesso!');
+            } else {
+                console.log('Erro ao enviar dados.');
+                res.json().then(response => alert(response));
+            }
+        })
+        .catch(error => {
+            console.error('Erro na requisição:', error);
+        });
 }
