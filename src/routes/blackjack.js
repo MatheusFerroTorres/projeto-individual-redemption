@@ -10,14 +10,14 @@ router.post("/pontuar-ou-atualizar", function (req, res) {
 });
 
 
-// GET ALL
+// Pegar todos os dados
 
 router.get("/", function (req, res) {
     blackjackController.pegar(req, res);
 });
 
 
-// GET ONE
+// Pegar dado especifico de um usuario
 
 router.get("/resultado/:idUsuario", function (req, res) {
     blackjackController.resultadoJogo(req, res);

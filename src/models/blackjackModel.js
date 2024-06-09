@@ -39,7 +39,7 @@ function atualizar(VitoriaAtual, DerrotaAtual, EmpateAtual, qtdTotal, idUsuario)
     return database.executar(instrucaoSql);
 }
 
-// SELECT
+// SELECT DE VERIFICAÇÃO
 
 function verificarUsuario(idUsuario) {
 
@@ -49,7 +49,7 @@ function verificarUsuario(idUsuario) {
 
 }
 
-
+// SELECT PARA GRÁFICO DO RANKING
 
 function pegar() {
     var instrucaoSql = `
@@ -58,6 +58,8 @@ function pegar() {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+// SELECT PARA GRÁFICO DE PIZZA 
 
 function resultadoJogo(idUsuario) {
     var instrucaoSql =
