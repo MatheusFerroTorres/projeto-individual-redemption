@@ -36,6 +36,8 @@ body {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    font-family: Montserrat;
+    cursor: pointer;
 }
 
 .sidebar img{

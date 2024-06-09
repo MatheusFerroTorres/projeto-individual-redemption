@@ -59,7 +59,7 @@ function atualizarPainel() {
         TotalCrupiê += Number(listaCrupiê[cont]);
     }
 
-    div_total.innerHTML = `<br> Total do Crupiê: ${TotalCrupiê} <br> Total do Jogador: ${TotalJogador} <br> Partida Atual: ${partida.qtdTotal}`;
+    div_total.innerHTML = `<br> Total do Crupiê: ${TotalCrupiê} <br> Total do Jogador: ${TotalJogador} <br> Partida Atual: ${partida.qtdTotal}/10`;
     limitador = TotalCrupiê;
 }
 

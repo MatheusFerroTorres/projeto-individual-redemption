@@ -15,27 +15,47 @@
         <img src="../assets/REDEMPTION.png" alt="">
         <a class="fecharbtn" onclick="fecharNav()">x</a>
         <a href="../BLACKJACK/BLACKJACK.html">BLACKJACK</a>
-        <a href="../DASHBOARD/DASHBOARD.html">RANKING</a>
+        <a href="../DASHBOARD/DASHBOARD.html">DASHBOARD</a>
         <a href="../REGRAS/REGRAS.html">REGRAS</a>
         <a href="../HOME/HOME.html" onclick="sair()">SAIR</a>
     </div>
 
-    <div id="conteudo">
+    <div id="conteudo" class="conteudo">
         <button class="abrirbtn" onclick="abrirNav()">☰</button>
         <h2>DASHBOARD</h2>
-        <p>Aqui estão presentes os gráficos com o ranking de melhores colocados no BLACKJACK.</p>
+        <p>Aqui estão presentes os gráficos com o ranking de melhores colocados no BLACKJACK, e as estatísticas do seu jogo.</p>
     </div>
 
-    <div class="container1">
-        <div class="ranking">
-            <canvas id="myChart"></canvas>
+    <div class="kpis">
+        <div class="kpi">
+            <h3>Suas Vitórias</h3>
+            <p id="vitorias">0</p>
+        </div>
+        <div class="kpi">
+            <h3>Suas Derrotas</h3>
+            <p id="derrotas">0</p>
+        </div>
+        <div class="kpi">
+            <h3>Seus Empates</h3>
+            <p id="empates">0</p>
         </div>
     </div>
 
-    <div class="container2">
-        <div class="estatistica">
-            <canvas id="myChart2"></canvas>
+    <div class="graficos">
+        <div class="container1">
+            <h1>RANKING GERAL</h1>
+            <div class="ranking">
+                <canvas id="myChart" class="graficoBarra"></canvas>
+            </div>
         </div>
+    
+        <div class="container2">
+            <h1>ESTATÍSTICA DO SEU JOGO</h1>
+            <div class="estatistica">
+                <canvas id="myChart2" class="graficoBarra"></canvas>
+            </div>
+        </div>
+
     </div>
 
 </body>
@@ -76,72 +96,86 @@
 
     // GRAFICO RANKING
 
-    function pegar() {
-        const ctx = document.getElementById('myChart');
-        //Chart JS
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: listaNomes,
-                datasets: [{
-                    label: '# of Votes',
-                    data: listaVencida,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        suggestedMin: 0,
-                        suggestedMax: 10,
-                        beginAtZero: true
-                    }, x: {
-                        ticks: {
-                            color: 'white',
-                            font: {
-                                size: 15
-                            }
+function pegar() {
+    const ctx = document.getElementById('myChart');
+    // Chart JS
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: listaNomes,
+            datasets: [{
+                label: 'Quantidade de vitórias',
+                data: listaVencida,
+                backgroundColor: '#1AD101', 
+                borderColor: '#242021', 
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    beginAtZero: true,
+                    grid: {
+                            color:'#FFFFFF'
                         }
-                    }
+                    
+                },
+                x: {
+                    ticks: {
+                        color: 'white',
+                        font: {
+                            size: 15
+                        },
+                        grid: {
+                            color:'#000000'
+                        }
+                    } 
                 }
             }
-        });
-    }
+        }
+    });
+}
 
-    // GRAFICO - RESULTADO DA PARTIDA
+// GRAFICO - RESULTADO DA PARTIDA
 
-    function estatistica(total) {
+function estatistica(total) {
+    var grafico = document.getElementById('myChart2');
 
-        var grafico = document.getElementById('myChart2');
-
-        var pieChart = new Chart(grafico, {
-            type: 'pie',
-            data: {
-                labels: ['Vitórias', 'Derrotas', 'Empates'],
-                datasets: [{
-                    label: 'Quantidade',
-                    data: total,
-                    borderColor: "#FFFF",
-                    backgroundColor: [
-                        "#B0E0E6", "#FF4500", "#2E8B57", "#FF0000", "#FFFF00"
-                    ]
-                }]
-            },
-            options: {
-                // Opções específicas para o gráfico de pizza
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        enabled: true,
-                    }
+    new Chart(grafico, {
+        type: 'pie',
+        data: {
+            labels: ['Vitórias', 'Derrotas', 'Empates'],
+            datasets: [{
+                label: 'Quantidade',
+                data: total,
+                borderColor: '#FFFFFF',
+                backgroundColor: [
+                    '#1AD101', 
+                    '#D61A07', 
+                    '#D5C2B1'  
+                ],
+                borderColor: [
+                    '#242021', 
+                    '#242021', 
+                    '#242021'  
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    enabled: true,
                 }
             }
-        });
-    }
-
+        }
+    });
+}
     // FETCH - RANKING
 
     fetch('/blackjack/')
@@ -172,6 +206,11 @@
                 total.push(res[0].qtdPartidasPerdidas)
                 total.push(res[0].qtdPartidasEmpatadas)
 
+                // Update KPIs
+            vitorias.innerHTML = res[0].qtdPartidasGanhas;
+            derrotas.innerHTML = res[0].qtdPartidasPerdidas;
+            empates.innerHTML = res[0].qtdPartidasEmpatadas;
+            
                 console.log(`resultado do jogo: ${total}`);
                 estatistica(total);
 

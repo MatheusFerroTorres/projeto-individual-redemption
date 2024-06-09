@@ -25,10 +25,3 @@ fkUsuario int,
 primary key (idIcone, fkUsuario),
 foreign key (fkUsuario) references usuario(idUsuario)
 );
-
- SELECT usuario.nome, qtdPartidasGanhas, qtdPartidasPerdidas, qtdPartidasEmpatadas, qtdPartidasTotal 
- from blackjack join usuario on fkUsuario = idUsuario order by qtdPartidasGanhas desc;
- 
- select * from blackjack where fkUsuario = 2;
- 
- update blackjack set qtdPartidasGanhas = 3 and qtdPartidasPerdidas = and qtdPartidasEmpatadas = and qtdPartidasTotal = where fkUsuario = ;
