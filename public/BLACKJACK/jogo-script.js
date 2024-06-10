@@ -135,7 +135,7 @@ function parar() {
         partida.qtdPerdida++
         alert(`Crupiê venceu. Com ${TotalCrupiê}.`);
         fimDeJogo();
-    } else if (totalJogador >= 21 && TotalCrupiê >= 21) {
+    } else if (totalJogador > 21 && TotalCrupiê > 21) {
         partida.qtdEmpate++
         alert(`Empate! Crupiê ficou com ${TotalCrupiê}. Você ficou com ${totalJogador}.`);
         fimDeJogo();
